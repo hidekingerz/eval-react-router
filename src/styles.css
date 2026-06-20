@@ -1,0 +1,310 @@
+:root {
+  font-family: system-ui, "Segoe UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #1f2933;
+  background: #f5f7fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.app-head h1 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.lead {
+  margin: 0 0 12px;
+  color: #52606d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+code {
+  background: #e4e7eb;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.92em;
+}
+
+.level-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.level-nav a {
+  background: #3e4c59;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: ui-monospace, monospace;
+}
+
+.level-nav a:hover {
+  background: #1f2933;
+}
+
+.hints {
+  font-size: 13px;
+  color: #52606d;
+  line-height: 1.6;
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.app-body {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 16px;
+}
+
+.app-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* ネストパネル：深さで色を変えて入れ子を視認しやすくする */
+.panel {
+  border: 1px solid #cbd2d9;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  background: #fff;
+}
+
+.panel.depth-1 {
+  border-left-color: #7c3aed;
+}
+.panel.depth-2 {
+  border-left-color: #0891b2;
+}
+.panel.depth-3 {
+  border-left-color: #059669;
+}
+.panel.depth-4 {
+  border-left-color: #d97706;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-head h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.badge {
+  background: #2563eb;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.badge-error {
+  background: #dc2626;
+}
+
+.loader-data {
+  font-size: 13px;
+  margin: 8px 0;
+  font-family: ui-monospace, monospace;
+  color: #1f2933;
+}
+
+.action-data {
+  font-size: 13px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin: 6px 0;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0;
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.control-group,
+.action-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.control-label {
+  font-size: 12px;
+  color: #52606d;
+}
+
+.chip {
+  font-size: 12px;
+  text-decoration: none;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd2d9;
+  color: #3e4c59;
+  background: #fff;
+}
+
+.chip-on {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #fff;
+}
+
+.action-form input {
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.action-form button,
+.log-head button {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.action-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.outlet:empty {
+  display: none;
+}
+
+/* error 表示 */
+.error-panel {
+  border-left-color: #dc2626 !important;
+  background: #fef2f2;
+}
+
+.error-message {
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  color: #b91c1c;
+  background: #fff;
+  border: 1px solid #fecaca;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.error-note {
+  font-size: 12px;
+  color: #7f1d1d;
+  line-height: 1.6;
+}
+
+/* ログパネル */
+.log-panel {
+  flex: 0 0 380px;
+  position: sticky;
+  top: 16px;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 10px;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+}
+
+.log-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.log-head h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.log-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+}
+
+.log-item {
+  display: grid;
+  grid-template-columns: 56px 56px auto;
+  gap: 4px;
+  padding: 3px 0;
+  border-bottom: 1px solid #1e293b;
+  align-items: baseline;
+}
+
+.log-msg {
+  grid-column: 1 / -1;
+  color: #cbd5e1;
+  padding-left: 4px;
+}
+
+.log-time {
+  color: #64748b;
+}
+
+.log-kind {
+  font-weight: 700;
+}
+
+.kind-loader .log-kind {
+  color: #38bdf8;
+}
+.kind-action .log-kind {
+  color: #a78bfa;
+}
+.kind-error .log-kind {
+  color: #f87171;
+}
+.kind-render .log-kind {
+  color: #34d399;
+}
+.kind-nav .log-kind {
+  color: #fbbf24;
+}
+
+.log-route {
+  color: #94a3b8;
+}
+
+.log-empty {
+  color: #64748b;
+  list-style: none;
+}
