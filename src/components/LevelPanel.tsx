@@ -6,7 +6,7 @@ import {
   useLoaderData,
   useLocation,
   useNavigation,
-} from "react-router-dom";
+} from "react-router";
 import type { LevelDef } from "../lib/levels";
 import { LEVELS } from "../lib/levels";
 import type { LevelLoaderData } from "../routes/makeRoute";

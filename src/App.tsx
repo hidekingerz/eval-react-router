@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 import { LevelNav, LevelPanel } from "./components/LevelPanel";
 import { LogPanel } from "./components/LogPanel";
 import { levelById } from "./lib/levels";

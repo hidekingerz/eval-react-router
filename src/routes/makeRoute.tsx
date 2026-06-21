@@ -1,4 +1,4 @@
-import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router-dom";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
 import { logEvent } from "../lib/eventLog";
 import { levelById } from "../lib/levels";
 import { shouldFault, throwFault } from "../lib/fault";

@@ -1,6 +1,6 @@
 # eval-react-router
 
-react-router（v6 data router / `createBrowserRouter`）の **loader / action / errorElement** が、
+react-router v8（data router / `createBrowserRouter`）の **loader / action / errorElement** が、
 URL を多段にネストしたときにどう動くかを観察するためのデモアプリです。
 
 5 段にネストしたルートを用意し、各階層に loader・action・errorElement を持たせています。

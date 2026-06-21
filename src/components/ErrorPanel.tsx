@@ -4,11 +4,11 @@ import {
   isRouteErrorResponse,
   useLocation,
   useRouteError,
-} from "react-router-dom";
+} from "react-router";
 import type { LevelDef } from "../lib/levels";
 import { logEvent } from "../lib/eventLog";
 
-// errorElement（v6 の data router におけるエラー表示）。
+// errorElement（data router におけるエラー表示）。
 // useRouteError() で、loader / action / render のいずれで throw された値でも受け取れる。
 export function ErrorPanel({ level }: { level: LevelDef }) {
   const error = useRouteError();
