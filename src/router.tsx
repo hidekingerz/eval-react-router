@@ -15,7 +15,8 @@ const members = makeRoute("members");
 //       └ teams                       teams       (errorElement あり)
 //           └ :teamId                 team        (errorElement なし → 親 teams へ伝播)
 //               └ members             members     (errorElement あり)
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
   {
     path: "/",
     id: "root",
@@ -65,4 +66,10 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+  ],
+  {
+    // Vite の base（GitHub Pages ではサブパス）配下でルーティングを成立させる。
+    // BASE_URL は末尾に "/" を含む（例: "/eval-react-router/"）ため除去する。
+    basename: import.meta.env.BASE_URL.replace(/\/$/, "") || "/",
+  },
+);

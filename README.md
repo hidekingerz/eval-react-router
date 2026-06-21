@@ -24,6 +24,24 @@ npm run preview    # ビルド結果をプレビュー
 npm run typecheck  # 型チェックのみ
 ```
 
+## GitHub Pages へのデプロイ
+
+`main` ブランチへ push すると、GitHub Actions（`.github/workflows/deploy.yml`）が
+ビルドして GitHub Pages へ自動デプロイします。公開 URL は次の通りです。
+
+```
+https://hidekingerz.github.io/eval-react-router/
+```
+
+初回のみ、リポジトリの **Settings → Pages → Build and deployment** で
+**Source** を **GitHub Actions** に設定してください。
+
+仕組み:
+
+- `vite.config.ts` … 本番ビルド時のみ `base` をリポジトリ名（`/eval-react-router/`）に設定。
+- `src/router.tsx` … `createBrowserRouter` の `basename` に `import.meta.env.BASE_URL` を渡し、サブパス配下でルーティングが成立するようにする。
+- ワークフロー … ビルド後に `index.html` を `404.html` へコピー。GitHub Pages は未知パスで `404.html` を返すため、ディープリンク（例 `/eval-react-router/dashboard/teams`）でもアプリが起動し react-router が解決する。
+
 ## ルート構成
 
 | URL | id | loader | action | errorElement |
